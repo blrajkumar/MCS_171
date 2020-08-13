@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.Scanner;
 
 /* *********************************************************
  * MCS 172 - Java
@@ -7,6 +5,9 @@ import java.util.Scanner;
  * Student Full Name   : Rajkumar B L  
  * Student ID number   : 2047120
  **********************************************************/
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class CarRental {
 	
 	static String comp_name  = "Binod CarShare";
