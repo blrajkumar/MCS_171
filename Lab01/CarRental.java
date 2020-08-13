@@ -31,18 +31,16 @@ public class CarRental {
 	  String outp_msg="";
 	  if (ocup.equalsIgnoreCase("student"))	
 	  {
-		  outp_msg = "Thank you for choosing "+comp_name+"!\n";
-		  outp_msg = "You made the right choice. We are haooy to have you onboard\n";
-		  outp_msg = "To celebrate your choice, we are happy to offer you with one year free membership\n";
-		  outp_msg = "Stay tuned for further updates";
-		  System.out.println(outp_msg);
+		  outp_msg = "Thank you for choosing "+comp_name+"!\n"
+		  	     +"You made the right choice. We are haooy to have you onboard\n"
+		             +"To celebrate your choice, we are happy to offer you with one year free membership\n"
+		             +"Stay tuned for further updates";
 	  }
 	  else
 	  {
-		  outp_msg = "Thank you for choosing "+comp_name+"!\n";
-		  outp_msg = "The complete membership portfolio for "+ocup+"s is yet to be designed";
-		  outp_msg = "Sorry for the inconvinience caused. Stay tuned for further updates";
-		  //System.out.println(outp_msg);
+		  outp_msg = "Thank you for choosing "+comp_name+"!\n"
+		  	     +"The complete membership portfolio for "+ocup+"s is yet to be designed"
+		   	     +"Sorry for the inconvinience caused. Stay tuned for further updates";
 	  }
 	  
 	  return outp_msg;
@@ -58,7 +56,7 @@ public class CarRental {
 		this .cust_info[this.cust_info_pointer][4]=mem_info[4];  //Contact
 		this.cust_info_pointer=this.cust_info_pointer+1;  //Moving the 2d array pointer to next row
 		
-		return "Hurray! You have now become member of our family";
+		return membership_msg(this .cust_info[this.cust_info_pointer-1][2]);
 	}
 	
 	private String member_add_all(String [][] mem_info)
