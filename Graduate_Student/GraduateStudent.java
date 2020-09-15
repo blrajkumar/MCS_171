@@ -67,11 +67,37 @@ public class GraduateStudent extends Student {
 				}
 			}
 			
-			grdStdList.get(k).display();// Calls the display function
+			//grdStdList.get(k).display();// Calls the display function
+			System.out.println("||| Student information has been successfully updated to the list  ||| ");
 		}
 		
-		System.out.println("||| Student information has been successfully updated to the list  ||| ");
+		
+		
+		int currentStdHgt, ctr=0;
+		String currentStdprg;
+		for(int k=0; k < grdStdList.size(); k++)
+		{
+			currentStdHgt = grdStdList.get(k).height;
+			currentStdprg = grdStdList.get(k).prgName;
+			if (currentStdHgt > 150 && currentStdprg.equalsIgnoreCase("BCA"))
+			{   
+				if(ctr==0) {System.out.println("\nDisplaying the list of students of height above 150cm in the BCA program:");}
+				System.out.println("----------------------***-------------------");
+				ctr++; 
+				System.out.println("Student - " + ctr); 
+				grdStdList.get(k).display();
+            }
+			System.out.println("----------------------***-------------------"); 
+		}
+		if(ctr==0)
+		{
+			System.out.println("There are no students from the student list who "
+			+"are of height above 150cm in the BCA program :(");
+		}
+		
 		stdInp.close();
+		
 	}
 
 }
+
