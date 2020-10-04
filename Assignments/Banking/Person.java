@@ -36,7 +36,7 @@ public class Person extends SBI {
 		//Math.random generates a value between 0 to 1
 		//To Generate random int value from 2047100 to 2047300
     	//Syntax --> Math.random() * (max - min + 1) + min
-		this.setPerson_id((int)(Math.random() * (2047102 - 2047100 + 1) + 2047100));
+		this.setPerson_id((int)(Math.random() * (2047300 - 2047100 + 1) + 2047100));
 		
 		if(!list_person_ids.contains(this.getPerson_id()))
 		{
@@ -165,7 +165,7 @@ public class Person extends SBI {
 			  System.out.println("Enter your email: "); 
 			  email = stdInp.nextLine();
 			  
-			  System.out.println("Choose from the below option for the type of account to be created."
+			  System.out.println("Choose from the below option for the type of account to be created (c/s):-"
 			  ); System.out.println(" 1. Current Account ----> 'c'");
 			  System.out.println(" 2. Savings Account ----> 's'"); 
 			  acnt_typ = stdInp.nextLine().charAt(0);
