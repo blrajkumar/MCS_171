@@ -107,10 +107,10 @@ public class CarRentalSystem {
 		return no_of_cust;
 	}
 	
-	public String membership_msg(String ocup)
+	public String membership_msg(String occup)
 	{
 	  String outp_msg="";
-	  if (ocup.equalsIgnoreCase("student"))	
+	  if (occup.equalsIgnoreCase("student"))	
 	  {
 		  outp_msg = "Thank you for choosing "+comp_name+"!\n"
 		  	     +"You made the right choice. We are happy to have you onboard\n"
@@ -120,7 +120,7 @@ public class CarRentalSystem {
 	  else
 	  {
 		  outp_msg = "Thank you for choosing "+comp_name+"!\n"
-		  	     +"The complete membership portfolio for "+ocup+"s is yet to be designed"
+		  	     +"The complete membership portfolio for "+occup+"s is yet to be designed"
 		   	     +"\nSorry for the inconvinience caused. Stay tuned for further updates";
 	  }
 	  
