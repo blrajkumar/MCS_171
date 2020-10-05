@@ -16,6 +16,14 @@ public class Member extends BinodCarShare
 		super(menu);
 	}
 	
+	public int getCust_id() {
+		return cust_id;
+	}
+
+	public void setCust_id(int cust_id) {
+		this.cust_id = cust_id;
+	}
+	
 	private String verify_user_details()
 	{
 		 Scanner in=new Scanner(System.in);
@@ -57,6 +65,9 @@ public class Member extends BinodCarShare
 		  outp_msg = "Thank you for choosing "+super.getComp_name()+"!\n"
 		  	     +"You made the right choice. We are happy to have you onboard\n"
 		             +"To celebrate your choice, we are happy to offer you with one year free membership\n"
+		             +"----------------------------------\n"
+				     +"|    Your user id --> " + this.getCust_id() + "    |\n"
+				     +"----------------------------------\n" 
 		             +"Stay tuned for further updates.";
 	  }
 	  else
@@ -71,7 +82,7 @@ public class Member extends BinodCarShare
 	
 	private void member_add(String [] mem_info)
 	{
-		super.add_Cust_info_list(cust_id,mem_info);
+		super.add_Cust_info_list(getCust_id(),mem_info);
 	}
 	
 	@Override
@@ -81,7 +92,7 @@ public class Member extends BinodCarShare
 		Scanner in=new Scanner(System.in);
 		Character valid ='n';
 		System.out.println("Enter the details of the member:-"); 
-		 do {	 
+		do {	 
 			 // Getting user details and storing them in an array --> cust_mem
 			 System.out.println("Enter your name: ");
 			 cust_mem[0]=in.nextLine();
@@ -92,40 +103,40 @@ public class Member extends BinodCarShare
 			 System.out.println("Enter your Driver License: ");
 			 cust_mem[3]=in.nextLine();
 			 System.out.println("Enter your Contact information: ");
-			 cust_mem[4]=in.nextLine();	 
+			 cust_mem[4]=in.nextLine();	
+			 //Prints the details of current customer 
 			 super.account_details(cust_mem);
 			 //Call verify_user_details method to handle the verification part 
 		     valid = verify_user_details().charAt(0); 
 		 }
 		 while (!(valid.equals('y')));
-		 cust_mem[5]="CRS"+cust_id_generator();
+	     cust_mem[5]="CRS"+cust_id_generator();
 		 System.out.println(membership_msg(cust_mem[2]));
-		 
-	   //Calling the member_add function to load all the info to the cust_info database
-       member_add(cust_mem);
+		 //Calling the member_add function to load all the info to the cust_info database
+		 member_add(cust_mem);
 	}
-	
+
 	@Override
 	protected int cust_id_generator() 
 	{
 		//Math.random generates a value between 0 to 1
 		//To Generate random int value from 2047100 to 2047300
 		//Syntax --> Math.random() * (max - min + 1) + min
-		cust_id = ((int)(Math.random() * (2047300 - 2047100 + 1) + 2047100));
+		setCust_id(((int)(Math.random() * (2047300 - 2047100 + 1) + 2047100)));
 				
-				if(!super.getList_cust_ids().contains(cust_id))
+				if(!super.getList_cust_ids().contains(getCust_id()))
 				{
-					super.add_cust_id_list(cust_id);
+					super.add_cust_id_list(getCust_id());
 				}
 				else 
 				{
-					while(super.getList_cust_ids().contains(cust_id))// To repeat the process until a unique id is generated
+					while(super.getList_cust_ids().contains(getCust_id()))// To repeat the process until a unique id is generated
 					{
-						cust_id=((int)(Math.random() * (2047102 - 2047100 + 1) + 2047100));
-						if(!super.getList_cust_ids().contains(cust_id)){super.add_cust_id_list(cust_id);break;}//Adds the newly created unique randomised student id to the "IDS" arraylist
+						setCust_id(((int)(Math.random() * (2047102 - 2047100 + 1) + 2047100)));
+						if(!super.getList_cust_ids().contains(getCust_id())){super.add_cust_id_list(getCust_id());break;}//Adds the newly created unique randomised student id to the "IDS" arraylist
 					}
 				}
-		return cust_id;
+		return getCust_id();
 	}
 	
 	public static void main(String[] args)
