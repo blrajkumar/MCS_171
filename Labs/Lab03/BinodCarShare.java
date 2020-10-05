@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public abstract class BinodCarShare implements CarRentalSystem 
 {
+	private static String comp_first_name;
 	private static String comp_name;
 	private static String comp_addr;
 	private static String comp_phone;
@@ -27,7 +28,8 @@ public abstract class BinodCarShare implements CarRentalSystem
 
 	static 
 	{
-		comp_name  = "BINOD CARSHARE";
+		comp_first_name  = "BINOD";
+		comp_name  = comp_first_name + comp_sur_name;
 	    comp_addr  = "52 - Haynes Avenue, North York, Tiruppur, Tamilnadu, India - 641663";
 		comp_phone = "0421 - 2047120";
 		
@@ -41,7 +43,7 @@ public abstract class BinodCarShare implements CarRentalSystem
 	    System.out.println("**********************************");
 	    System.out.println("*    ______                      *");
 	    System.out.println("*   /|_||_\\`.__                  *");
-	    System.out.println("*  (   _    _ _\\  " + comp_name + " *");
+	    System.out.println("*  (   _    _ _\\  " + getComp_name() + " *");
 	    System.out.println("*  =`-(_)--(_)-'                 *");
 	    System.out.println("*                                *");
 	    System.out.println("**********************************");  
@@ -52,7 +54,7 @@ public abstract class BinodCarShare implements CarRentalSystem
 	{
 		private static void welcome_note()
 		{
-			 System.out.println("\nWelcome to "+comp_name+" homepage");
+			 System.out.println("\nWelcome to "+getComp_name()+" homepage");
 		}
 	}
 	
@@ -64,7 +66,7 @@ public abstract class BinodCarShare implements CarRentalSystem
 	}
 
 	protected static void setComp_name(String comp_name) {
-		BinodCarShare.comp_name = comp_name;
+		BinodCarShare.comp_first_name = comp_name;
 	}
 
 	public static String getComp_addr() {
@@ -142,17 +144,17 @@ public abstract class BinodCarShare implements CarRentalSystem
 			{
 			  case 'r':
 				  register();
-				  System.out.println("\nWelcome to "+comp_name+" homepage");
+				  System.out.println("\nWelcome to "+getComp_name()+" homepage");
 				  valid_input = false;
 				  break;
 			  case 'l':
 				  login();
-				  System.out.println("\nWelcome to "+comp_name+" homepage");
+				  System.out.println("\nWelcome to "+getComp_name()+" homepage");
 				  valid_input = false;
 				  break;
 			  case 'c':
 				  car_availability_details();
-				  System.out.println("\nWelcome to "+comp_name+" homepage");
+				  System.out.println("\nWelcome to "+getComp_name()+" homepage");
 				  valid_input = false;
 				  break;
 			  case 'q':
@@ -182,7 +184,7 @@ public abstract class BinodCarShare implements CarRentalSystem
 		System.out.println("\n**********************************");
 		System.out.println("*             Login              *");
 	    System.out.println("**********************************");
-		System.out.println("The site is under construction :)");
+		System.out.println("This site is under construction :)");
 	}
 	
 	@Override
@@ -268,7 +270,7 @@ public abstract class BinodCarShare implements CarRentalSystem
 		Character appl_mem_resp='n';
 		Scanner in=new Scanner(System.in);
 		
-	    System.out.println("We the team of "+comp_name+" are happy to invite you to be part of our family");
+	    System.out.println("We the team of "+getComp_name()+" are happy to invite you to be part of our family");
 		System.out.println("Would you like to apply membership for yourself or for your family member.");
 		System.out.println("Enter your choice as y/n:");
 		appl_mem_resp = in.nextLine().charAt(0); 
