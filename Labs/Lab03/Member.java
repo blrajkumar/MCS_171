@@ -154,6 +154,7 @@ public class Member extends BinodCarShare
 		  }
 		else
 		{
+                        //Used to print the thanks_note at the end of the page
 			end_note();
 		}
 	}
