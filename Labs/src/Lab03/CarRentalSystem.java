@@ -10,7 +10,7 @@ package Lab03;
 
 public interface CarRentalSystem 
 {
-    static final String comp_sur_name = " CARSHARE";
+    static final String comp_sur_name = new String(" CARSHARE");
 	
 	void menu(); //Display the menu to the user
 	
