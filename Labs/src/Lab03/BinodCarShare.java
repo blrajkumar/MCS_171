@@ -77,6 +77,7 @@ public abstract class BinodCarShare implements CarRentalSystem
 	protected static void setComp_name(String comp_name) {
 		BinodCarShare.comp_first_name.replace(0, BinodCarShare.comp_first_name.length(), comp_name.toUpperCase());
 		BinodCarShare.comp_name.setLength(0);
+		BinodCarShare.comp_addr.ensureCapacity(comp_name.length());
 		BinodCarShare.comp_name.append(BinodCarShare.comp_first_name.toString()+comp_sur_name);
 	}
 
@@ -85,7 +86,6 @@ public abstract class BinodCarShare implements CarRentalSystem
 	}
 
 	protected static void setComp_addr(String comp_addr) {
-		BinodCarShare.comp_addr.ensureCapacity(comp_addr.length());
 		BinodCarShare.comp_addr.replace(0, BinodCarShare.comp_addr.length(), comp_addr);
 	}
 
@@ -94,7 +94,7 @@ public abstract class BinodCarShare implements CarRentalSystem
 	}
 
 	protected static void setComp_phone(String comp_phone) {
-		BinodCarShare.comp_phone.ensureCapacity(comp_phone.length());
+		//BinodCarShare.comp_phone.ensureCapacity(comp_phone.length());
 		BinodCarShare.comp_phone.replace(0, BinodCarShare.comp_phone.length(), comp_phone);
 	}
 	
