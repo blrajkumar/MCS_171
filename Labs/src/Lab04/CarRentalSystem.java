@@ -1,8 +1,16 @@
-package Lab03;
+package Lab04;
+
+/* *********************************************************
+ * MCS 172 - Java
+ * Lab 03
+ * Student Full Name   : Rajkumar B L  
+ * Student ID number   : 2047120
+ * Domain - Car Rental Management System
+ **********************************************************/
 
 public interface CarRentalSystem 
 {
-    static final String comp_sur_name = " CARSHARE";
+    static final String comp_sur_name = new String(" CARSHARE");
 	
 	void menu(); //Display the menu to the user
 	

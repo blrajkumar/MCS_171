@@ -1,4 +1,13 @@
-package Lab03;
+package Lab04;
+
+
+/* *********************************************************
+ * MCS 172 - Java
+ * Lab 03
+ * Student Full Name   : Rajkumar B L  
+ * Student ID number   : 2047120
+ * Domain - Car Rental Management System
+ **********************************************************/
 
 import java.util.Scanner;
 
@@ -154,7 +163,6 @@ public class Member extends BinodCarShare
 		  }
 		else
 		{
-                        //Used to print the thanks_note at the end of the page
 			end_note();
 		}
 	}

@@ -1,4 +1,13 @@
-package Lab03;
+package Lab05;
+
+
+/* *********************************************************
+ * MCS 172 - Java
+ * Lab 03
+ * Student Full Name   : Rajkumar B L  
+ * Student ID number   : 2047120
+ * Domain - Car Rental Management System
+ **********************************************************/
 
 import java.util.Scanner;
 
@@ -137,25 +146,5 @@ public class Member extends BinodCarShare
 					}
 				}
 		return getCust_id();
-	}
-	
-	public static void main(String[] args)
-	{
-		if(args.length==1 && (Integer.parseInt(args[0]) >= 1))
-		  {
-			  Member[] cr = new Member[Integer.parseInt(args[0])];
-			  for (int x=0; x < Integer.parseInt(args[0]); x++)
-			  {
-				  System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-				  System.out.println("|           Rider   -->  "+ (x+1) +"       |");
-				  System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-				  cr[x] = new Member();
-			  }			 
-		  }
-		else
-		{
-                        //Used to print the thanks_note at the end of the page
-			end_note();
-		}
 	}
 }

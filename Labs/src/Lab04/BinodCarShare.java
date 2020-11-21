@@ -1,4 +1,12 @@
-package Lab03;
+package Lab04;
+
+/* *********************************************************
+ * MCS 172 - Java
+ * Lab 03
+ * Student Full Name   : Rajkumar B L  
+ * Student ID number   : 2047120
+ * Domain - Car Rental Management System
+ **********************************************************/
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,10 +16,10 @@ import java.util.Scanner;
 
 public abstract class BinodCarShare implements CarRentalSystem 
 {
-	private static String comp_first_name;
-	private static String comp_name;
-	private static String comp_addr;
-	private static String comp_phone;
+	private static StringBuffer comp_first_name;
+	private static StringBuffer comp_name;
+	private static StringBuffer comp_addr;
+	private static StringBuffer comp_phone;
 	private static ArrayList<ArrayList<String> > car_list =  new ArrayList<ArrayList<String>>();
 	private static Map<Integer,String[]> cust_info = new HashMap<Integer,String[]>();
 	private static ArrayList<Integer> list_cust_ids = new ArrayList<Integer>();
@@ -28,10 +36,11 @@ public abstract class BinodCarShare implements CarRentalSystem
 
 	static 
 	{
-		comp_first_name  = "BINOD";
-		comp_name  = comp_first_name + comp_sur_name;
-	    comp_addr  = "52 - Haynes Avenue, North York, Tiruppur, Tamilnadu, India - 641663";
-		comp_phone = "0421 - 2047120";
+		comp_first_name = new StringBuffer("BINOD");
+		comp_name  = new StringBuffer();
+		comp_name.append(comp_first_name + comp_sur_name);
+	    comp_addr  = new StringBuffer("52 - Haynes Avenue, North York, Tiruppur, Tamilnadu, India - 641663");
+		comp_phone = new StringBuffer("0421 - 2047120");
 		
 		//Create a list of string using .aslist and type cast to ArrayList and finally add each ArrayList to bigger ArrayList
 		car_list.add(new ArrayList<String>(Arrays.asList("Chev-Beat","Auto","Hatchback","2000","  Not-Available")));
@@ -62,27 +71,31 @@ public abstract class BinodCarShare implements CarRentalSystem
 	//****************    Getters and Setters  ***********************
 	
 	public static String getComp_name() {
-		return comp_name;
+		return comp_name.toString();
 	}
 
 	protected static void setComp_name(String comp_name) {
-		BinodCarShare.comp_first_name = comp_name;
+		BinodCarShare.comp_first_name.replace(0, BinodCarShare.comp_first_name.length(), comp_name.toUpperCase());
+		BinodCarShare.comp_name.setLength(0);
+		BinodCarShare.comp_addr.ensureCapacity(comp_name.length());
+		BinodCarShare.comp_name.append(BinodCarShare.comp_first_name.toString()+comp_sur_name);
 	}
 
 	public static String getComp_addr() {
-		return comp_addr;
+		return comp_addr.toString();
 	}
 
 	protected static void setComp_addr(String comp_addr) {
-		BinodCarShare.comp_addr = comp_addr;
+		BinodCarShare.comp_addr.replace(0, BinodCarShare.comp_addr.length(), comp_addr);
 	}
 
 	public static String getComp_phone() {
-		return comp_phone;
+		return comp_phone.toString();
 	}
 
 	protected static void setComp_phone(String comp_phone) {
-		BinodCarShare.comp_phone = comp_phone;
+		//BinodCarShare.comp_phone.ensureCapacity(comp_phone.length());
+		BinodCarShare.comp_phone.replace(0, BinodCarShare.comp_phone.length(), comp_phone);
 	}
 	
 	//Returns the entire car_list
