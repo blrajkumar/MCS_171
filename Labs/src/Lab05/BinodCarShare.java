@@ -411,7 +411,7 @@ public abstract class BinodCarShare implements CarRentalSystem
 		 System.out.println("--------------------------------------------");	
 	}
 	
-	protected static void end_note()
+	public static void end_note()
 	{
 		System.out.println("\nThank you for visiting us today.");
 		System.out.println("We wish you a wonderful day ahead.");

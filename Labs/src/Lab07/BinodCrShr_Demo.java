@@ -1,4 +1,9 @@
-package Lab05;
+package Lab07;
+
+import Lab06.BinodCarShare;
+
+import Lab06.BinodCarShare;
+import Lab06.Member;
 
 public class BinodCrShr_Demo 
 {
@@ -48,7 +53,7 @@ public class BinodCrShr_Demo
 	    welcome.welcome_note();
 	}
 	
-	public static class welcome
+	static class welcome
 	{
 		private static void welcome_note()
 		{
@@ -72,7 +77,7 @@ public class BinodCrShr_Demo
 					  System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 					  System.out.println("|           Rider   -->  "+ (x+1) +"       |");
 					  System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-					  cr[x] = new Member();
+					  cr[x] = new Member("all");
 				  }	
 			  }
 		  }
