@@ -13,7 +13,6 @@ public class BookCar extends BinodCarShare implements Runnable
    
    public BookCar(int cust_id,String car_code)
    {
-	   System.out.println("hello admin3"); 
 	   this.cust_id = cust_id;
 	   this.car_code = car_code;
    }
@@ -21,12 +20,13 @@ public class BookCar extends BinodCarShare implements Runnable
 	@Override
 	public void run() 
 	{
-		System.out.println("hello admin4"); 
 		admin_book_car(this.cust_id,this.car_code);
+		try{Thread.sleep(2000);}catch(InterruptedException e){System.out.println(e);} 
 	}
    
-   private  void admin_book_car(int cust_id,String car_code)
-	{System.out.println("hello admin5"); 
+   //Should be synchronized
+	private synchronized void admin_book_car(int cust_id,String car_code)
+   {
 		if (!getList_avail_car().contains(car_code))
 		{
 			System.out.println("The entered car-code is incorrect (or) Not available.\nBetter luck next time!");

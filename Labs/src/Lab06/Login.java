@@ -26,9 +26,9 @@ public class Login extends BinodCarShare
 			Scanner in=new Scanner(System.in);
 			System.out.println("Enter the user id: ");
 		    userid = Integer.parseInt(in.nextLine());
-		    //pass = PasswordField.readPassword("Enter the password:");
-		    System.out.println("Enter the password:");
-		    pass = in.nextLine();
+		    pass = PasswordField.readPassword("Enter the password:");
+		    //System.out.println("Enter the password:");
+		    //pass = in.nextLine();
     		attempt++;
 		    if(contains_cust_id(userid))
 		    {
@@ -36,10 +36,11 @@ public class Login extends BinodCarShare
 		    	{
 		    		id = userid;
 		    		this.pass = pass;
-		    		if (id == 2131197 && this.pass.equals("Bala0412!")) {
+		    		if (id == 2131197 && this.pass.equals("Binod197!")) {
 		    			admin=true;
 		    		}
 		    		System.out.println("Login Successfull !!!");
+		    		if(admin) {System.out.println("\nWelcome Admin");}
 		    		valid=true;
 		    	}
 		    }
@@ -106,15 +107,14 @@ public class Login extends BinodCarShare
 							  {
 							    book_car();
 							    
-							  }catch (InvalidLicenseException licex)
+							  }catch (InvalidLicenseException licen)
 							  {
 								  
-								  System.out.println(licex.getMessage());
+								  System.out.println(licen.getMessage());
 							  }
 						  }
 						  else
 						  {
-							  System.out.println("hello admin"); 
 							  admin_multi_booking();
 						  }
 						  valid_input = false;
@@ -132,12 +132,16 @@ public class Login extends BinodCarShare
 	
 	private void admin_multi_booking()
 	{
-		System.out.println("hello admin2"); 
 		BookCar b1 = new BookCar(2047120,"#NS1112");
 		BookCar b2 = new BookCar(2047197,"#NS1112");
 		Thread t1 =new Thread(b1);
 		Thread t2 =new Thread(b2);
 		t1.start();
 		t2.start();
+		while(t1.isAlive() || t2.isAlive()) 
+		{
+			
+	    }
+		
 	}
 }

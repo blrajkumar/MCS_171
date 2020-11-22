@@ -58,16 +58,33 @@ public abstract class BinodCarShare implements CarRentalSystem
 	    comp_addr  = new StringBuffer("52 - Haynes Avenue, North York, Tiruppur, Tamilnadu, India - 641663");
 		comp_phone = new StringBuffer("0421 - 2047120");
 		
-		cust_id_pass.put(123456, "rajkumar");
-		cust_id_pass.put(2131197, "Bala0412!");
-		list_avail_car.add("#NS1112");
-		
 		//Create a list of string using .aslist and type cast to ArrayList and finally add each ArrayList to bigger ArrayList
 		car_list.add(new ArrayList<String>(Arrays.asList("#CH1022","Chev-Beat","Auto","Hatchback","2000","Available")));
 		car_list.add(new ArrayList<String>(Arrays.asList("#NS1112","Nissan-Macro","Manual","Hatchback","1500","Available")));	
 		car_list.add(new ArrayList<String>(Arrays.asList("#KA1047","kia-Forte","Auto","Sedan","3000","Available")));
 		car_list.add(new ArrayList<String>(Arrays.asList("#TO1053","Toyoto-Corolla","Auto","Sedan","2500","Available")));
 		car_list.add(new ArrayList<String>(Arrays.asList("#NS1089","Nissan-Rogue","Auto","SUV","4000","Available"))); 
+		
+		//Initialisation for testing purpose
+		cust_info.put(2047120,new String[]{"Raj","Tiruppur","Student","IN047120","9361048881","2047120"});
+		cust_info.put(2047130,new String[]{"Hari","RichmondHill","Student","IN047130","9568388831","2047130"});
+		cust_info.put(2047133,new String[]{"Deepak","NorthYork","Student","IN047133","9361048881","2047133"});
+		cust_info.put(2047134,new String[]{"Raul","Coimbatore","Student","IN047134","9361048881","2047134"});
+		cust_info.put(2047143,new String[]{"Shiva","Toronto","Student","IN047143","9361048881","2047143"});
+		cust_info.put(2047143,new String[]{"Binod","Toronto","Student","IN1311197","9361048881","2131197"});//ADMIN
+		
+		//Initialisation for testing purpose
+		cust_id_pass.put(2047120,"Raj123"); cust_id_pass.put(2047130,"Hari123");
+		cust_id_pass.put(2047133,"Deepak123"); cust_id_pass.put(2047134,"Raul123");
+		cust_id_pass.put(2047143,"Shiva123");cust_id_pass.put(2131197,"Binod197!");//ADMIN
+		
+		//Initialisation for testing purpose
+		list_cust_ids.add(2047120);list_cust_ids.add(2047130);
+		list_cust_ids.add(2047133);list_cust_ids.add(2047134);
+		list_cust_ids.add(2047143);list_cust_ids.add(2131197);//ADMIN
+		
+		//Initialisation for testing purpose
+		 intila_list_car_avail();
 	}
 	
 
@@ -323,6 +340,18 @@ public abstract class BinodCarShare implements CarRentalSystem
 			
 		}
 		System.out.println("**********************************");
+	}
+	
+	
+	public static void intila_list_car_avail()
+	{
+		for(int x=0,y=1; x<getCar_list().size();x++)
+		{
+			if(getCar_list().get(x).get(5) == "Available" )
+			{
+				addList_avail_car(getCar_list().get(x).get(0));
+			}
+		}
 	}
 	
 	@Override

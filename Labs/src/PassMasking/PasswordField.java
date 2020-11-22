@@ -2,61 +2,47 @@ package PassMasking;
 
 import java.io.*;
 
-public class PasswordField {
-
-	  /**
-	    *@param prompt The prompt to display to the user
-	    *@return The password as entered by the user
-	    */
-	   public static String readPassword (String prompt) {
+public class PasswordField 
+{
+      public static String readPassword (String prompt)
+      {
 	      EraserThread et = new EraserThread(prompt);
 	      Thread mask = new Thread(et);
 	      mask.start();
-
+	
 	      BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 	      String password = "";
-
+	
 	      try {
-	         password = in.readLine();
+	          password = in.readLine();
 	      } catch (IOException ioe) {
-	        ioe.printStackTrace();
+	          ioe.printStackTrace();
 	      }
-	      // stop masking
 	      et.stopMasking();
-	      // return the password entered by the user
 	      return password;
-	   }
-	}
+      }
+}   
 
-class EraserThread implements Runnable {
-	   private boolean stop;
-	 
-	   /**
-	    *@param The prompt displayed to the user
-	    */
-	   public EraserThread(String prompt) {
-	       System.out.print(prompt);
-	   }
+class EraserThread implements Runnable
+{
+   private boolean stop;
 
-	   /**
-	    * Begin masking...display asterisks (*)
-	    */
-	   public void run () {
-	      stop = true;
-	      while (stop) {
-	         System.out.print("\010*");
-		 try {
-		    Thread.currentThread().sleep(1);
-	         } catch(InterruptedException ie) {
-	            ie.printStackTrace();
-	         }
-	      }
-	   }
+   public EraserThread(String prompt) {
+       System.out.print(prompt);
+   }
 
-	   /**
-	    * Instruct the thread to stop masking
-	    */
-	   public void stopMasking() {
-	      this.stop = false;
-	   }
-	}
+   public void run () {
+      while (!stop){
+         System.out.print("\010*");
+         try {
+            Thread.currentThread().sleep(1);
+         } catch(InterruptedException ie) {
+            ie.printStackTrace();
+         }
+      }
+   }
+
+   public void stopMasking() {
+      this.stop = true;
+   }
+}
