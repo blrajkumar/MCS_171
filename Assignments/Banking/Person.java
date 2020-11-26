@@ -133,7 +133,6 @@ public class Person extends SBI {
 		System.out.println("Name	        : " + this.name);
 		System.out.println("Bank ID         : " + this.branch_id);
 		System.out.println("Bank Name       : " + this.branch);
-	    System.out.println("Account number  : " + this.account_num);
 		System.out.println("Balance         : " + this.getBalance());
 		System.out.println("Annual Interest : " + this.getAnnualInterest());
 	}

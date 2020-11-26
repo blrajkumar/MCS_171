@@ -17,13 +17,13 @@ public class ICICI implements Bank {
 	public void createAccount() {
 		branch_id = "001061";
 		branch    = "ICICI - TIRUPUR";
-		location  = "DRG COMPLEX 565 PALLADAM MAIN ROAD TIRUPPUR 641603";
+		location  = "PALLADAM MAIN ROAD,TIRUPPUR-641603";
 		setMonthlyInterest(4.5);
 	}
 
 	@Override
 	public void deposit(double amount) {
-		setBalance(balance+amount);
+		setBalance(this.balance+amount);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class ICICI implements Bank {
 			{
 				throw new Insufficientbalance("The withdraw amount exceeds current account balance :(");
 			}
-			else {setBalance(balance-amount);}
+			else {setBalance(this.balance-amount);}
 		}catch(Insufficientbalance e)
 		{
 			System.out.println(e);
@@ -43,21 +43,21 @@ public class ICICI implements Bank {
     
 
 	public void setBalance(double amt) {
-		balance = amt;
+		this.balance = amt;
 	}
 	
 	@Override
 	public double getBalance() {
-		return balance;
+		return this.balance;
 	}
 
 	@Override
 	public double getAnnualInterest() {
-		return monthly_interest_rate/100;
+		return this.monthly_interest_rate/100;
 	}
 	
 	void setMonthlyInterest(double ir) {
-		monthly_interest_rate = ir;
+		this.monthly_interest_rate = ir;
 	}
 	
 }

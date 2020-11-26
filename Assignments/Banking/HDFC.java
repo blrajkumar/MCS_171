@@ -17,13 +17,13 @@ public class HDFC implements Bank {
 	public void createAccount() {
 		branch_id = "031288";
 		branch    = "HDFC - COIMBATORE";
-		location  = "5A KALAPATTI MAIN ROAD COIMBOTORE 641604";
+		location  = "KALAPATTI MAIN ROAD, COIMBOTORE-641604";
 		setMonthlyInterest(4.0);
 	}
 
 	@Override
 	public void deposit(double amount) {
-		setBalance(balance+amount);
+		setBalance(this.balance+amount);
 	}
 
 	@Override
@@ -43,21 +43,21 @@ public class HDFC implements Bank {
     
 
 	public void setBalance(double amt) {
-		balance = amt;
+		this.balance = amt;
 	}
 	
 	@Override
 	public double getBalance() {
-		return balance;
+		return this.balance;
 	}
 
 	@Override
 	public double getAnnualInterest() {
-		return monthly_interest_rate/100;
+		return this.monthly_interest_rate/100;
 	}
 	
 	void setMonthlyInterest(double ir) {
-		monthly_interest_rate = ir;
+		this.monthly_interest_rate = ir;
 	}
 
 }

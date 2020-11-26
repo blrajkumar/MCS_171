@@ -26,9 +26,9 @@ public class Login extends BinodCarShare
 			Scanner in=new Scanner(System.in);
 			System.out.println("Enter the user id: ");
 		    userid = Integer.parseInt(in.nextLine());
-		    pass = PasswordField.readPassword("Enter the password:");
-		    //System.out.println("Enter the password:");
-		    //pass = in.nextLine();
+		    //pass = PasswordField.readPassword("Enter the password:");
+		    System.out.println("Enter the password:");
+		    pass = in.nextLine();
     		attempt++;
 		    if(contains_cust_id(userid))
 		    {

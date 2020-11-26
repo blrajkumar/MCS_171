@@ -18,7 +18,7 @@ public class SBI implements Bank {
 	public void createAccount() {
 		branch_id = "031288";
 		branch    = "SBI - TIRUPUR";
-		location  = "58 MUNICIPAL OFFICE ROAD TIRUPUR 641601";
+		location  = "PN ROAD,TIRUPUR-641601";
 		setMonthlyInterest(3.5);
 	}
 
@@ -50,21 +50,21 @@ public class SBI implements Bank {
     
 
 	public void setBalance(double amt) {
-		balance = amt;
+		this.balance = amt;
 	}
 	
 	@Override
 	public double getBalance() {
-		return balance;
+		return this.balance;
 	}
 
 	@Override
 	public double getAnnualInterest() {
-		return monthly_interest_rate/100;
+		return this.monthly_interest_rate/100;
 	}
 	
 	void setMonthlyInterest(double ir) {
-		monthly_interest_rate = ir;
+		this.monthly_interest_rate = ir;
 	}
 
 }

@@ -2,7 +2,7 @@ package A2_Banking;
 
 interface Bank 
 {
-	void createAccount(); // Creating new account for particular bank
+	void createAccount(); 
 	
 	void deposit(double amount);
 	
@@ -10,5 +10,5 @@ interface Bank
 	
 	double getBalance();
 	
-	double getAnnualInterest(); //Returns annual interest
+	double getAnnualInterest();
 }

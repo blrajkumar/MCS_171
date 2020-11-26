@@ -23,7 +23,7 @@ public class BinodCrShr_Demo
 			
 	    String raj ="\t|________________________________________|";
 	           raj+="\n\t|                                        |";
-		       raj+="\n\t| MCS 171  - Java Lab Test - 01          |";
+		       raj+="\n\t| MCS 171  - Java Lab                    |";
 	           raj+="\n\t| Name     : Rajkumar B L                |";
 	           raj+="\n\t| Reg.No   : 2047120                     |";
 	           raj+="\n\t| Concepts : Exception,Package,Thread    |";

@@ -335,7 +335,7 @@ public abstract class BinodCarShare implements CarRentalSystem
 				System.out.print(getCar_list().get(x).get(2)+", "); // Car - Gear (Auto/Manual)
 				System.out.print(getCar_list().get(x).get(3)+", "); // Car - Size (Hatchback/Sedan/Full)
 				System.out.print(getCar_list().get(x).get(4)+")"+"\n"); // Car - Rent (Price)
-				addList_avail_car(getCar_list().get(x).get(0));
+				//addList_avail_car(getCar_list().get(x).get(0));
 			}
 			
 		}

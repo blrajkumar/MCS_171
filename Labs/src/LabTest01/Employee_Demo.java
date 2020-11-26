@@ -18,11 +18,17 @@ public class Employee_Demo
 	public static void main(String[] args) 
 	{
 			
-		int noOfEmp;
+		int noOfEmp=0;
 		Scanner stdInp = new Scanner(System.in);
 		System.out.println("Enter the number of employees to add to the Company: ");
-		noOfEmp =  Integer.parseInt(stdInp.nextLine()); 
-		
+		try
+		{
+		   noOfEmp =  Integer.parseInt(stdInp.nextLine()); 
+		}catch(Exception e)
+		{
+			System.out.println("Invalid entry!");
+			System.out.println(e.getMessage());
+		}
 		ArrayList<EmployeeSalary> empList = new ArrayList<EmployeeSalary>();
 		ArrayList<Integer> ids = new ArrayList<Integer>();
 		

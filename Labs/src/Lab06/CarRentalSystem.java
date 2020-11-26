@@ -2,7 +2,7 @@ package Lab06;
 
 /* *********************************************************
  * MCS 172 - Java
- * Lab 03
+ * Lab 06
  * Student Full Name   : Rajkumar B L  
  * Student ID number   : 2047120
  * Domain - Car Rental Management System
